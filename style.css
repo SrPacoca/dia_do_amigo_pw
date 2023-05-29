@@ -1,0 +1,581 @@
+:root {
+  --bg-color: #222b34;
+
+  --shadow-color: #222b34af;
+
+  --bg-color-nav: #222b34;
+  --text-nav-color: #eaeaea;
+  --details-nav-color: #d31b1c;
+
+  --white-color: #eaeaea;
+  --details: #d31b1c;
+  --slim-details: #d31b1b9c;
+  --bg-image: url(./img/class.webp);
+  --light-font: 100;
+  --bold-font: 500;
+  --extrabold-font: 600;
+
+  --logo-color: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+:target {
+  scroll-margin-top: 4em;
+}
+
+/* Reponsividade*/
+/* Aparecer*/
+
+@media screen and (min-width: 924px) {
+  #menu {
+    display: none;
+  }
+
+  /* Animação linha em baixo do nav*/
+  a::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+    width: 8%;
+    height: 3px;
+
+    background-color: var(--details);
+
+    transition: all 1s ease;
+  }
+
+  a:hover::before {
+    width: 75%;
+  }
+
+  #aboutClassContainer {
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+
+    width: 30%;
+  }
+  #navBarRight {
+    display: none;
+  }
+
+  #allChat {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr;
+  }
+
+  #videosContainer {
+    width: 100%;
+    height: 75vh;
+
+    display: flex;
+    position: relative;
+
+    margin: 2% auto;
+  }
+
+  .userPhoto {
+    width: 6.5vw;
+    height: 6.5vw;
+
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+    margin-bottom: 3%;
+  }
+  .chatPhoto {
+    width: 35vw;
+    height: 35vw;
+  }
+  #leftArrowButton {
+    top: 40%;
+    left: 20%;
+  }
+
+  #rightArrowButton {
+    top: 40%;
+    right: 20%;
+  }
+}
+
+/* Sumir os textos*/
+@media screen and (max-width: 924px) {
+  #navContainer {
+    display: none;
+  }
+
+  #aboutClassContainer {
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+
+    width: 60%;
+  }
+
+  #allChat {
+    display: grid;
+  }
+
+  #videosContainer {
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    position: relative;
+
+    margin: 2% auto;
+  }
+  .userPhoto {
+    width: 10vw;
+    height: 10vw;
+
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+    margin-bottom: 3%;
+  }
+
+  .chatPhoto {
+    width: 55vw;
+    height: 55vw;
+  }
+
+  #leftArrowButton {
+    top: 40%;
+    left: 3vw;
+  }
+
+  #rightArrowButton {
+    top: 40%;
+    right: 3vw;
+  }
+}
+/* Fim Reponsividade*/
+
+h1 {
+  font-weight: var(--bold-font);
+  margin-left: 1%;
+  text-transform: uppercase;
+}
+
+section {
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+
+  position: relative;
+}
+
+img {
+  height: 3rem;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+/*Navbar*/
+
+.notAnim:hover::before {
+  width: 0%;
+}
+
+.notAnim::before {
+  width: 0%;
+}
+
+.full {
+  width: 100%;
+  border-radius: 0;
+
+  margin: 0 auto;
+}
+
+.menuBar {
+  width: 40px;
+  height: 4px;
+
+  margin-top: 1px;
+
+  transition: all 0.9s ease;
+  background-color: var(--text-nav-color);
+}
+
+.hideContent {
+  display: none;
+}
+.fixed {
+  position: fixed;
+  z-index: 3;
+}
+
+.openMenu {
+  margin-bottom: 15%;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+
+  z-index: 2;
+}
+
+a:hover {
+  color: var(--details-nav-color);
+  transition: all 0.2s ease;
+}
+
+#navContainer {
+  margin-top: 0;
+}
+
+#navBar {
+  display: flex;
+}
+
+#navContainer > ul > li {
+  margin-bottom: 6px;
+}
+
+#navContainer > ul {
+  display: flex;
+}
+
+#menu {
+  margin-top: 1.3%;
+  margin-right: 3.2%;
+
+  z-index: 3;
+
+  background: #00000000;
+
+  transform: rotateY(180deg);
+
+  height: fit-content;
+}
+
+nav {
+  color: var(--text-nav-color);
+  letter-spacing: 12px;
+
+  border-radius: 20px;
+  width: 90%;
+  height: 30%;
+  padding: 1.5%;
+
+  background-color: var(--bg-color-nav);
+
+  margin: 2% auto;
+  position: relative;
+
+  justify-content: space-between;
+  text-transform: uppercase;
+  transition: all 0.8s ease;
+}
+
+#navBarRight {
+  width: 16%;
+
+  border-radius: 0 0 15px 15px;
+
+  text-align: right;
+
+  position: absolute;
+  margin-top: 3%;
+
+  align-items: center;
+  transition: all 0.8s ease;
+  right: 0;
+  top: 0;
+}
+
+#navBarRight > ul {
+  margin: 0 auto;
+}
+
+.openSidebar {
+  display: flex;
+
+  height: 30vh;
+}
+
+#logo {
+  display: flex;
+}
+
+#logo img {
+  width: 5vw;
+  height: 5vw;
+
+  max-width: 40px;
+  max-height: 40px;
+
+  margin-right: 10%;
+  position: relative;
+  filter: invert(var(--logo-color));
+  transform: scaleX(-1);
+}
+
+ul {
+  list-style: none;
+  gap: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-nav-color);
+
+  transition: all 2ms ease;
+  position: relative;
+}
+
+/*Fim do Navbar*/
+
+/*Sobre a sala*/
+#photo {
+  background: var(--bg-image) no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+
+#textAboutClass {
+  text-align: center;
+
+  font-weight: var(--light-font);
+  color: var(--white-color);
+
+  padding: 8%;
+  position: relative;
+
+  width: fit-content;
+  left: 10%;
+  border-left: 15px solid var(--details);
+  border-right: 15px solid var(--details);
+}
+
+#textAboutClass > h1 {
+  color: var(--details);
+}
+
+/*Linha Esquerda Baixo*/
+#linha-e-b {
+  position: absolute;
+
+  width: 10%;
+  height: 15px;
+
+  bottom: 0;
+  left: 0;
+  background-color: var(--details);
+}
+
+/*Linha Esquerda Cima*/
+#linha-e-c {
+  position: absolute;
+
+  width: 10%;
+  height: 15px;
+
+  top: 0;
+  left: 0;
+  background-color: var(--details);
+}
+
+/*Linha Direita Baixo*/
+#linha-d-b {
+  position: absolute;
+
+  width: 10%;
+  height: 15px;
+
+  bottom: 0;
+  right: 0;
+  background-color: var(--details);
+}
+
+/*Linha Direita Cima*/
+#linha-d-c {
+  position: absolute;
+
+  width: 10%;
+  height: 15px;
+
+  top: 0;
+  right: 0;
+  background-color: var(--details);
+}
+/*Fim texto sobre a sala*/
+
+/*Seções sobre e video*/
+
+.mainH1 {
+  font-size: 2.5rem;
+  letter-spacing: 24px;
+
+  margin-left: 6%;
+}
+
+.sectionTitle {
+  display: flex;
+}
+
+.groupTitle {
+  margin-left: 40px;
+  margin-top: 50px;
+
+  width: fit-content;
+  position: relative;
+
+  z-index: 1;
+
+  left: 3%;
+}
+
+.groupTitle p {
+  width: 80%;
+}
+
+#about {
+  background: var(--white-color);
+  padding: 0.01%;
+}
+
+.chatAndPhoto {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#gustavoPhoto {
+  background-image: url("img/gustavo/mrLontra.webp");
+}
+
+#classPhoto {
+  background-image: url("img/sala.jpeg");
+}
+
+#evelynPhoto {
+  background-image: url("img/evelyn/Foto1.webp");
+}
+
+#brunaPhoto {
+  background-image: url("img/bruna/minieu.webp");
+}
+
+#iaraPhoto {
+  background-image: url("img/iara/iarami.webp");
+}
+
+#joaoPhoto {
+  background-image: url("img/joao/preto.webp");
+}
+
+.chatPhoto {
+  filter: blur(2px);
+  transition: all 0.7s ease;
+}
+.chatPhoto:hover {
+  filter: blur(0);
+  box-shadow: 1px 1px 9px 1px var(--shadow-color);
+}
+
+#allChat {
+  margin: 5% 0;
+
+  gap: 4.5rem;
+}
+
+video {
+  height: 100%;
+}
+
+#videoMask {
+  width: 50%;
+  height: 100%;
+
+  min-width: 405.641px;
+
+  margin: auto;
+
+  overflow-x: hidden;
+}
+
+#videoContent {
+  display: flex;
+  height: 100%;
+
+  justify-content: space-around;
+
+  width: 5500px;
+}
+
+#videoContent video {
+  margin: 0 5%;
+}
+
+#leftArrow {
+  transform: scaleX(-1);
+}
+
+.arrowButton {
+  height: 10vw;
+  width: 10vw;
+
+  min-height: 63.188px;
+  min-width: 63.188px;
+
+  max-width: 78px;
+  max-height: 78px;
+
+  border-radius: 50%;
+
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 1;
+
+  box-shadow: 3px 3px 3px 0px var(--shadow-color);
+  background-color: var(--white-color);
+}
+
+.arrowButton:hover {
+  background-color: var(--slim-details);
+}
+
+.arrowButton img {
+  width: 100%;
+  height: 100%;
+}
+
+/*FIM Seções sobre e video*/
