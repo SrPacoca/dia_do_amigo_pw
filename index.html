@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="scrollBar.css" />
+    <title>Homepage | Spotlight</title>
+  </head>
+  <body>
+    <!--Cabeçalho-->
+    <header id="header">
+      <nav id="navBar">
+        <a href="#photo" class="notAnim" id="logo"
+          ><img src="img/icon/logo.webp" />
+          <h1>Spotlight</h1></a
+        >
+        <button id="menu">
+          <div id="top-bar" class="menuBar"></div>
+          <div id="middle-bar" class="menuBar"></div>
+          <div id="bottom-bar" class="menuBar"></div>
+        </button>
+
+        <div id="navContainer">
+          <ul>
+            <li><a href="#video"> Vídeos</a></li>
+            <li><a href="#about">Nós</a></li>
+          </ul>
+        </div>
+
+        <nav id="navBarRight" class="closeSidebar">
+          <ul>
+            <div id="containerImg" class="hideContent">
+              <ul>
+                <li>
+                  <a href="#about">
+                    <img src="img/icon/group.webp" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#video">
+                    <img src="img/icon/video.webp" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </nav>
+      </nav>
+    </header>
+    <!-- FIM Cabeçalho-->
+
+    <!--Main-->
+    <main>
+      <section id="photo">
+        <div id="aboutClassContainer">
+          <div id="textAboutClass">
+            <h1>1°DS</h1>
+            <p>De fato, uma sala...</p>
+            <div>
+              <div id="linha-e-b"></div>
+              <div id="linha-e-c"></div>
+              <div id="linha-d-b"></div>
+              <div id="linha-d-c"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="groupTitle">
+          <div id="aboutGroupText" class="sectionTitle">
+            <img src="img/icon/group.webp" class="mainImg" />
+            <h1 class="mainH1">Nós</h1>
+          </div>
+          <p>Veja um pouco sobre cada um do grupo.</p>
+        </div>
+
+        <div id="allChat">
+          <a href="bruna.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="brunaPhoto"></div>
+            <img src="img/bruna/brunaChat.png" class="chatPhoto" />
+          </a>
+          <a href="evelyn.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="evelynPhoto"></div>
+            <img src="img/evelyn/evelynChat.png" class="chatPhoto" />
+          </a>
+          <a href="gustavo.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="gustavoPhoto"></div>
+            <img src="img/gustavo/gustavoChat.png" class="chatPhoto" />
+          </a>
+          <a href="iara.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="iaraPhoto"></div>
+            <img src="img/iara/iaraChat.webp" class="chatPhoto" />
+          </a>
+          <a href="joao.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="joaoPhoto"></div>
+            <img src="img/joao/joaoChat.png" class="chatPhoto" />
+          </a>
+          <a href="sala.html" class="chatAndPhoto notAnim">
+            <div class="userPhoto" id="classPhoto"></div>
+            <img src="img/classChat.png" class="chatPhoto" />
+          </a>
+        </div>
+      </section>
+
+      <section id="video">
+        <div class="groupTitle">
+          <div id="videoGroupText" class="sectionTitle">
+            <img src="img/icon/video.webp" class="mainImg" />
+            <h1 class="mainH1">Vídeos</h1>
+          </div>
+        </div>
+
+        <div id="videosContainer">
+          <button class="arrowButton" id="leftArrowButton">
+            <img src="img/icon/arrow-small-right.webp" id="leftArrow" />
+          </button>
+          <div id="videoMask">
+            <div id="videoContent">
+              <video src="videos/videoBruna.mp4" controls></video>
+              <video src="videos/videoEvelyn.mp4" controls></video>
+              <video src="videos/videoGustavo.mp4" controls></video>
+              <video src="videos/videoIara.mp4" controls></video>
+              <video src="videos/videoJoao.mp4" controls></video>
+            </div>
+          </div>
+          <button class="arrowButton" id="rightArrowButton">
+            <img src="img/icon/arrow-small-right.webp" id="rightArrow" />
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- FIM Main-->
+
+    <!-- JS-->
+    <script src="sliderScript.js"></script>
+    <script src="barScript.js"></script>
+  </body>
+</html>

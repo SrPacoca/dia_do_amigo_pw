@@ -1,0 +1,17 @@
+:root {
+  --bg-scroll-color: #121b24;
+  --details: #d31b1c;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-scroll-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--details);
+  border-radius: 15px;
+}

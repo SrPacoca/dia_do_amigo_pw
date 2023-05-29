@@ -1,0 +1,308 @@
+@import url(https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap);
+
+:root {
+  --bg-color: #222b34;
+
+  --shadow-color: #222b34d3;
+
+  --bg-color-nav: #222b34;
+  --text-nav-color: #eaeaea;
+  --details-nav-color: #d31b1c;
+
+  --white-color: #eaeaea;
+  --details: #d31b1c;
+  --slim-details: #d31b1b9c;
+  --bg-image: url(./img/class.webp);
+  --light-font: 100;
+  --bold-font: 500;
+  --extrabold-font: 600;
+  --second-chat: #5d6975;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+body {
+  font-weight: var(--bold-font);
+
+  position: relative;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 20%;
+}
+html {
+  height: 100vh;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/*Navbar*/
+
+.notAnim:hover::before {
+  width: 0%;
+}
+
+.notAnim::before {
+  width: 0%;
+}
+
+h1 {
+  font-weight: var(--bold-font);
+}
+
+header {
+  width: 100%;
+  position: fixed;
+
+  top: 0;
+  z-index: 3;
+}
+
+a:hover {
+  color: var(--details-nav-color);
+  transition: all 0.2s ease;
+}
+
+#navContainer {
+  margin-top: 0;
+}
+
+#navBar {
+  display: flex;
+}
+
+nav {
+  color: var(--text-nav-color);
+  letter-spacing: 12px;
+
+  width: 100%;
+  height: 30%;
+  padding: 1.5%;
+
+  background-color: var(--bg-color-nav);
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-nav-color);
+
+  transition: all 2ms ease;
+  position: relative;
+}
+
+#logo {
+  display: flex;
+}
+
+#logo img {
+  width: 5vw;
+  height: 5vw;
+
+  max-width: 40px;
+  max-height: 40px;
+
+  margin-right: 10%;
+  position: relative;
+  filter: invert(1);
+  transform: scaleX(-1);
+}
+
+/*Fim do Navbar*/
+
+.text {
+  color: var(--white-color);
+
+  border-radius: 8px;
+  max-width: 95%;
+
+  padding: 10px;
+  box-shadow: 1px 4px 9px 1px var(--shadow-color);
+}
+
+.text h1 {
+  letter-spacing: 0.3rem;
+
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  margin-bottom: 5%;
+}
+
+#chat {
+  margin-top: 160px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.3rem;
+
+  padding: 0 8%;
+}
+
+#chat .chatContainer:nth-of-type(odd) {
+  justify-content: flex-start;
+}
+
+#chat .chatContainer:nth-of-type(even) {
+  justify-content: flex-end;
+}
+
+#chat .chatContainer:nth-of-type(odd) .text {
+  background-color: var(--details);
+}
+
+#chat .chatContainer:nth-of-type(even) .text {
+  background-color: var(--second-chat);
+}
+
+@media screen and (min-width: 893px) {
+  .textAndPhoto {
+    display: grid;
+
+    grid-template-columns: 4fr 1fr;
+    grid-column-gap: 0.2%;
+  }
+
+  .textAndPhotoClass {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 0.2%;
+  }
+}
+
+@media screen and (max-width: 893px) {
+  .textAndPhoto {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-column-gap: 0.2%;
+  }
+
+  .textAndPhoto img {
+    margin-top: 8%;
+
+    width: 95%;
+  }
+}
+.picClass {
+  border-radius: 100%;
+  border-style: solid;
+  border-color: #222b34;
+  border-width: 0.1%;
+
+  width: 6vw;
+  height: 6vw;
+
+  max-width: 80px;
+  max-height: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.textAndPhoto,
+.textAndPhotoClass {
+  align-items: center;
+}
+
+.chatContainer {
+  display: flex;
+
+  max-width: 100vw;
+}
+
+.pic {
+  margin: 0 1%;
+
+  border-radius: 100%;
+  border-style: solid;
+  border-color: #222b34;
+  border-width: 0.1%;
+
+  width: 6%;
+  height: 6%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.photo {
+  border: solid #d31b1c;
+  border-width: 0.1%;
+  border-radius: 5%;
+
+  width: 130%;
+
+  box-shadow: 1px 3px 9px 1px var(--shadow-color);
+}
+
+footer {
+  color: #eaeaea;
+  background-color: #222b34;
+
+  text-align: center;
+  justify-content: space-around;
+
+  padding: 1% 0;
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer :only-child {
+  margin: 10px auto;
+}
+
+footer img {
+  filter: invert(1);
+  margin-top: 1%;
+
+  margin-right: 2%;
+  width: clamp(40px, 5%, 50px);
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+
+  width: 0;
+  height: 7%;
+
+  background-color: var(--details);
+
+  transition: all 1s ease;
+}
+
+a:hover::before {
+  width: 75%;
+}
